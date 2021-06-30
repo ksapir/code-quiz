@@ -54,54 +54,131 @@ var questions= [
 var question1 = questions[0].question
 var question2 = questions[1].question
 var question3 = questions[2].question
-var question4 = questions[03].question
+var question4 = questions[3].question
 
 
-var answerBtns1 = questions[0].answers
-var answerBtns2 =questions[1].answers
-var answerBtns3 =questions[2].answers
-var answerBtns4 =questions[3].answers
+// var answerBtns1 = questions[0].answers
+// var answerBtns2 =questions[1].answers
+// var answerBtns3 =questions[2].answers
+// var answerBtns4 =questions[3].answers
 
-var answerBtnsArray = [
-    answerBtns1,
-    answerBtns2,
-    answerBtns3,
-    answerBtns4,
-]
+// var answerBtnsArray = [
+//     answerBtns1,
+//     answerBtns2,
+//     answerBtns3,
+//     answerBtns4,
+// ]
 
 var question1El = document.createElement("h2");
 var question2El = document.createElement("h2");
 var question3El = document.createElement("h2");
 var question4El = document.createElement("h2");
 
-var answerBtns1El = document.createElement("button");
-var answerBtns2El = document.createElement("button");
-var answerBtns3El = document.createElement("button");
-var answerBtns4El = document.createElement("button");
+var answerBtns1aEl = document.createElement("button");
+var answerBtns1bEl = document.createElement("button");
+var answerBtns1cEl = document.createElement("button");
+var answerBtns1dEl = document.createElement("button");
 
-question1El.textContent = questions[0].question
-answerBtns1El.textContent = questions[0].answers.a
-answerBtns1El.textContent = questions[0].answers.b
+var answerBtns2aEl = document.createElement("button");
+var answerBtns2bEl = document.createElement("button");
+var answerBtns2cEl = document.createElement("button");
+var answerBtns2dEl = document.createElement("button");
+
+var answerBtns3aEl = document.createElement("button");
+var answerBtns3bEl = document.createElement("button");
+var answerBtns3cEl = document.createElement("button");
+var answerBtns3dEl = document.createElement("button");
+
+var answerBtns4aEl = document.createElement("button");
+var answerBtns4bEl = document.createElement("button");
+var answerBtns4cEl = document.createElement("button");
+var answerBtns4dEl = document.createElement("button");
+
+question1El.textContent = questions[0].question;
+question2El.textContent = questions[1].question;
+question3El.textContent = questions[2].question;
+question4El.textContent = questions[3].question;
+
+answerBtns1aEl.textContent = questions[0].answers.a;
+answerBtns1bEl.textContent = questions[0].answers.b;
+answerBtns1cEl.textContent = questions[0].answers.c;
+answerBtns1dEl.textContent = questions[0].answers.d;
+
+answerBtns2aEl.textContent = questions[1].answers.a;
+answerBtns2bEl.textContent = questions[1].answers.b;
+answerBtns2cEl.textContent = questions[1].answers.c;
+answerBtns2dEl.textContent = questions[1].answers.d;
+
+answerBtns3aEl.textContent = questions[2].answers.a;
+answerBtns3bEl.textContent = questions[2].answers.b;
+answerBtns3cEl.textContent = questions[2].answers.c;
+answerBtns3dEl.textContent = questions[2].answers.d;
+
+answerBtns4aEl.textContent = questions[3].answers.a;
+answerBtns4bEl.textContent = questions[3].answers.b;
+answerBtns4cEl.textContent = questions[3].answers.c;
+answerBtns4dEl.textContent = questions[3].answers.d;
 
 bodyEl.appendChild(question1El);
 bodyEl.appendChild(question2El);
 bodyEl.appendChild(question3El);
 bodyEl.appendChild(question4El);
 
-question1El.appendChild(answerBtns1El);
-question2El.appendChild(answerBtns2El);
-question3El.appendChild(answerBtns3El);
-question4El.appendChild(answerBtns4El);
+var divEl = document.createElement("div")
+divEl.setAttribute("style", "display:flex; flex-direction: center; justify-content:center;")
+bodyEl.appendChild(divEl)
 
-question1El.style.visibility = "hidden";
-question2El.style.visibility = "hidden";
-question3El.style.visibility = "hidden";
-question4El.style.visibility = "hidden";
+divEl.appendChild(answerBtns1aEl);
+divEl.appendChild(answerBtns1bEl);
+divEl.appendChild(answerBtns1cEl);
+divEl.appendChild(answerBtns1dEl);
 
-answerBtns1El.style.visibility = "hidden"
-answerBtns2El.style.visibility = "hidden"
-answerBtns3El.style.visibility = "hidden"
-answerBtns4El.style.visibility = "hidden"
+
+question2El.appendChild(answerBtns2aEl);
+question2El.appendChild(answerBtns2bEl);
+question2El.appendChild(answerBtns2cEl);
+question2El.appendChild(answerBtns2dEl);
+
+question3El.appendChild(answerBtns3aEl);
+question3El.appendChild(answerBtns3bEl);
+question3El.appendChild(answerBtns3cEl);
+question3El.appendChild(answerBtns3dEl);
+
+question4El.appendChild(answerBtns4aEl);
+question4El.appendChild(answerBtns4bEl);
+question4El.appendChild(answerBtns4cEl);
+question4El.appendChild(answerBtns4dEl);
+
+question1El.setAttribute("style", "font-family: arial; text-align: center");
+question2El.setAttribute("style", "font-family: arial; text-align: center");
+question3El.setAttribute("style", "font-family: arial; text-align: center");
+question4El.setAttribute("style", "font-family: arial; text-align: center");
+
+
+question1El.style.display= "none";
+question2El.style.display= "none";
+question3El.style.display= "none";
+question4El.style.display= "none";
+
+answerBtns1aEl.style.display = "none";
+answerBtns1bEl.style.display = "none";
+answerBtns1cEl.style.display = "none";
+answerBtns1dEl.style.display = "none";
+
+answerBtns2aEl.style.display = "none";
+answerBtns2bEl.style.display = "none";
+answerBtns2cEl.style.display = "none";
+answerBtns2dEl.style.display = "none";
+
+answerBtns3aEl.style.display = "none";
+answerBtns3bEl.style.display = "none";
+answerBtns3cEl.style.display = "none";
+answerBtns3dEl.style.display = "none";
+
+answerBtns4aEl.style.display = "none";
+answerBtns4bEl.style.display = "none";
+answerBtns4cEl.style.display = "none";
+answerBtns4dEl.style.display = "none";
 
 var userScore = []
 
@@ -111,6 +188,11 @@ theEndEl.setAttribute("style", "text-align: center; margin: 50px;")
 bodyEl.appendChild(theEndEl)
 theEndEl.style.display = "none";
 
+var youScoredPage = document.createElement("h2")
+youScoredPage.textContent = `Congrats! You scored: ${userScore}`
+youScoredPage.setAttribute("style", "text-align: center; margin: 50px;")
+bodyEl.appendChild(youScoredPage)
+youScoredPage.style.display = "none"
 
 // Create start button
 var startBtn = document.querySelector("#start-button");
@@ -123,12 +205,36 @@ function setTime(){
     startPage.style.display ="none"
     var timer = setInterval(function () {
         countDown--;
-        question1El.hidden = false;
         timeEl.textContent = "Time remaing: " + countDown;
 
         if (countDown ===0){
             clearInterval(timer);
+            question1El.style.display = "none";
+            answerBtns1aEl.style.display = "none"
+            answerBtns1bEl.style.display = "none"
+            answerBtns1cEl.style.display = "none"
+            answerBtns1dEl.style.display = "none"
+
+            question2El.style.display = "none"
+            answerBtns2aEl.style.display = "none"
+            answerBtns2bEl.style.display = "none"
+            answerBtns2cEl.style.display = "none"
+            answerBtns2dEl.style.display = "none"
+
+            question3El.style.display = "none"
+            answerBtns3aEl.style.display = "none"
+            answerBtns3bEl.style.display = "none"
+            answerBtns3cEl.style.display = "none"
+            answerBtns3dEl.style.display = "none"
+
+            question4El.style.display = "none"
+            answerBtns4aEl.style.display = "none"
+            answerBtns4bEl.style.display = "none"
+            answerBtns4cEl.style.display = "none"
+            answerBtns4dEl.style.display = "none"
+
         theEndEl.style.display = "block"
+
         }
 
 }, 1000);
@@ -137,19 +243,90 @@ function setTime(){
 
 function quizStart(){
     if (startBtn){
-            question1El.style.visibility = "visible";
-            answerBtns1El.style.visibility = "visible"
+            question1El.style.display = "block";
+            answerBtns1aEl.style.display = "block"
+            answerBtns1aEl.addEventListener("click", page2)
+            answerBtns1bEl.style.display = "block"
+            answerBtns1bEl.addEventListener("click", page2)
+            answerBtns1cEl.style.display = "block"
+            answerBtns1cEl.addEventListener("click", page2)
+            answerBtns1dEl.style.display = "block"
+            answerBtns1dEl.addEventListener("click", page2)
         }
+    
     }
-    //     answerBtns1.style.visibility = "visibile"
-    // } 
-    // else {
-    //     answerBtns1.style.visibility = "hidden"
-    // }
 
-    console.log(quizStart)
+function page2(){
+    if (answerBtns1aEl || answerBtns1bEl || answerBtns1cEl || answerBtns1dEl){
+        question1El.style.display = "none";
+        answerBtns1aEl.style.display = "none"
+        answerBtns1bEl.style.display = "none"
+        answerBtns1cEl.style.display = "none"
+        answerBtns1dEl.style.display = "none"
+    
+        question2El.style.display = "block";
+        answerBtns2aEl.style.display = "block"
+        answerBtns2aEl.addEventListener("click", page3);
+        answerBtns2bEl.style.display = "block"
+        answerBtns2bEl.addEventListener("click", page3);
+        answerBtns2cEl.style.display = "block"
+        answerBtns2cEl.addEventListener("click", page3);
+        answerBtns2dEl.style.display = "block"
+        answerBtns2dEl.addEventListener("click", page3);
+    }
+}
 
+function page3(){
+    if (answerBtns2aEl || answerBtns2bEl || answerBtns2cEl || answerBtns2dEl){
+        question2El.style.display = "none"
+        answerBtns2aEl.style.display = "none"
+        answerBtns2bEl.style.display = "none"
+        answerBtns2cEl.style.display = "none"
+        answerBtns2dEl.style.display = "none"
 
+        question3El.style.display = "block";
+        answerBtns3aEl.style.display = "block"
+        answerBtns3aEl.addEventListener("click", page4)
+        answerBtns3bEl.style.display = "block"
+        answerBtns3bEl.addEventListener("click", page4)
+        answerBtns3cEl.style.display = "block"
+        answerBtns3cEl.addEventListener("click", page4)
+        answerBtns3dEl.style.display = "block"
+        answerBtns3dEl.addEventListener("click", page4)
+}
+}
+
+function page4(){
+    if (answerBtns3aEl || answerBtns3bEl || answerBtns3cEl || answerBtns3dEl){
+        question3El.style.display = "none"
+        answerBtns3aEl.style.display = "none"
+        answerBtns3bEl.style.display = "none"
+        answerBtns3cEl.style.display = "none"
+        answerBtns3dEl.style.display = "none"
+
+        question4El.style.display = "block";
+        answerBtns4aEl.style.display = "block"
+        answerBtns4aEl.addEventListener("click", page5)
+        answerBtns4bEl.style.display = "block"
+        answerBtns4bEl.addEventListener("click", page5)
+        answerBtns4cEl.style.display = "block"
+        answerBtns4cEl.addEventListener("click", page5)
+        answerBtns4dEl.style.display = "block"
+        answerBtns4dEl.addEventListener("click", page5)
+}
+}
+function page5(){
+    if (answerBtns4aEl || answerBtns4bEl || answerBtns4cEl || answerBtns4dEl){
+        question4El.style.display = "none"
+        answerBtns4aEl.style.display = "none"
+        answerBtns4bEl.style.display = "none"
+        answerBtns4cEl.style.display = "none"
+        answerBtns4dEl.style.display = "none"
+
+        youScoredPage.style.display = "block"
+        theEndEl.style.display = "none";
+}
+}
 
 // TODO: Create objects containing questions and answers
 
