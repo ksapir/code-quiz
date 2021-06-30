@@ -6,7 +6,11 @@ var timeEl = document.querySelector("#time");
 
 var startBtn = document.querySelector("#start-button");
 
-var countDown = 60;
+var counter = 0;
+
+var countDown = 50;
+
+var userScore = ""
 
 var questions= [
     {
@@ -55,19 +59,6 @@ var question1 = questions[0].question
 var question2 = questions[1].question
 var question3 = questions[2].question
 var question4 = questions[3].question
-
-
-// var answerBtns1 = questions[0].answers
-// var answerBtns2 =questions[1].answers
-// var answerBtns3 =questions[2].answers
-// var answerBtns4 =questions[3].answers
-
-// var answerBtnsArray = [
-//     answerBtns1,
-//     answerBtns2,
-//     answerBtns3,
-//     answerBtns4,
-// ]
 
 var question1El = document.createElement("h2");
 var question2El = document.createElement("h2");
@@ -125,7 +116,7 @@ bodyEl.appendChild(question3El);
 bodyEl.appendChild(question4El);
 
 var divEl = document.createElement("div")
-divEl.setAttribute("style", "display:flex; flex-direction: center; justify-content:center;")
+divEl.setAttribute("style", "margin-left: 500px;")
 bodyEl.appendChild(divEl)
 
 divEl.appendChild(answerBtns1aEl);
@@ -134,20 +125,20 @@ divEl.appendChild(answerBtns1cEl);
 divEl.appendChild(answerBtns1dEl);
 
 
-question2El.appendChild(answerBtns2aEl);
-question2El.appendChild(answerBtns2bEl);
-question2El.appendChild(answerBtns2cEl);
-question2El.appendChild(answerBtns2dEl);
+divEl.appendChild(answerBtns2aEl);
+divEl.appendChild(answerBtns2bEl);
+divEl.appendChild(answerBtns2cEl);
+divEl.appendChild(answerBtns2dEl);
 
-question3El.appendChild(answerBtns3aEl);
-question3El.appendChild(answerBtns3bEl);
-question3El.appendChild(answerBtns3cEl);
-question3El.appendChild(answerBtns3dEl);
+divEl.appendChild(answerBtns3aEl);
+divEl.appendChild(answerBtns3bEl);
+divEl.appendChild(answerBtns3cEl);
+divEl.appendChild(answerBtns3dEl);
 
-question4El.appendChild(answerBtns4aEl);
-question4El.appendChild(answerBtns4bEl);
-question4El.appendChild(answerBtns4cEl);
-question4El.appendChild(answerBtns4dEl);
+divEl.appendChild(answerBtns4aEl);
+divEl.appendChild(answerBtns4bEl);
+divEl.appendChild(answerBtns4cEl);
+divEl.appendChild(answerBtns4dEl);
 
 question1El.setAttribute("style", "font-family: arial; text-align: center");
 question2El.setAttribute("style", "font-family: arial; text-align: center");
@@ -180,8 +171,6 @@ answerBtns4bEl.style.display = "none";
 answerBtns4cEl.style.display = "none";
 answerBtns4dEl.style.display = "none";
 
-var userScore = []
-
 var theEndEl = document.createElement("h2")
 theEndEl.textContent = `Out of time! You scored: ${userScore}`
 theEndEl.setAttribute("style", "text-align: center; margin: 50px;")
@@ -194,7 +183,17 @@ youScoredPage.setAttribute("style", "text-align: center; margin: 50px;")
 bodyEl.appendChild(youScoredPage)
 youScoredPage.style.display = "none"
 
-// Create start button
+var correct = document.createElement("p")
+correct.textContent = "Correct!"
+correct.setAttribute("style", "font-size: 16px; text-align: center;")
+correct.style.display = "none"
+
+
+var incorrect = document.createElement("p")
+incorrect.textContent = "Incorrect"
+incorrect.setAttribute("style", "font-size: 16px; text-align: center;")
+incorrect.style.display = "none"
+
 var startBtn = document.querySelector("#start-button");
 
 
@@ -235,6 +234,7 @@ function setTime(){
 
         theEndEl.style.display = "block"
 
+
         }
 
 }, 1000);
@@ -246,15 +246,23 @@ function quizStart(){
             question1El.style.display = "block";
             answerBtns1aEl.style.display = "block"
             answerBtns1aEl.addEventListener("click", page2)
+            
             answerBtns1bEl.style.display = "block"
             answerBtns1bEl.addEventListener("click", page2)
+            
             answerBtns1cEl.style.display = "block"
             answerBtns1cEl.addEventListener("click", page2)
+           
             answerBtns1dEl.style.display = "block"
-            answerBtns1dEl.addEventListener("click", page2)
-        }
-    
+            answerBtns1dEl.addEventListener("click", page2)    
+            
+    if (answerBtns1cEl){
+        correct.style.display = "block"
+    } else {
+        incorrect.style.display = "block"
     }
+    }
+}
 
 function page2(){
     if (answerBtns1aEl || answerBtns1bEl || answerBtns1cEl || answerBtns1dEl){
@@ -263,6 +271,8 @@ function page2(){
         answerBtns1bEl.style.display = "none"
         answerBtns1cEl.style.display = "none"
         answerBtns1dEl.style.display = "none"
+        correct.style.display = "none"
+        incorrect.style.display = "none"
     
         question2El.style.display = "block";
         answerBtns2aEl.style.display = "block"
@@ -273,7 +283,13 @@ function page2(){
         answerBtns2cEl.addEventListener("click", page3);
         answerBtns2dEl.style.display = "block"
         answerBtns2dEl.addEventListener("click", page3);
+    
+    if (answerBtns2bEl){
+        correct.style.isplay = "block"
+    } else {
+        incorrect.style.display = "block"
     }
+}
 }
 
 function page3(){
@@ -283,6 +299,8 @@ function page3(){
         answerBtns2bEl.style.display = "none"
         answerBtns2cEl.style.display = "none"
         answerBtns2dEl.style.display = "none"
+        correct.style.display = "none"
+        incorrect.style.display = "none"
 
         question3El.style.display = "block";
         answerBtns3aEl.style.display = "block"
@@ -293,6 +311,12 @@ function page3(){
         answerBtns3cEl.addEventListener("click", page4)
         answerBtns3dEl.style.display = "block"
         answerBtns3dEl.addEventListener("click", page4)
+
+    if (answerBtns3aEl){
+        correct.style.display = "block"
+    } else {
+        incorrect.style.display = "block"
+    }
 }
 }
 
@@ -303,6 +327,8 @@ function page4(){
         answerBtns3bEl.style.display = "none"
         answerBtns3cEl.style.display = "none"
         answerBtns3dEl.style.display = "none"
+        correct.style.display = "none"
+        incorrect.style.display = "none"
 
         question4El.style.display = "block";
         answerBtns4aEl.style.display = "block"
@@ -313,6 +339,11 @@ function page4(){
         answerBtns4cEl.addEventListener("click", page5)
         answerBtns4dEl.style.display = "block"
         answerBtns4dEl.addEventListener("click", page5)
+    if (answerBtns4dEl){
+        correct.style.display = "block"
+    } else {
+        incorrect.style.display = "block"
+    }   
 }
 }
 function page5(){
@@ -322,10 +353,23 @@ function page5(){
         answerBtns4bEl.style.display = "none"
         answerBtns4cEl.style.display = "none"
         answerBtns4dEl.style.display = "none"
+        correct.style.display = "none"
+        incorrect.style.display = "none"
 
-        youScoredPage.style.display = "block"
-        theEndEl.style.display = "none";
+        theEndEl.style.display = "none"
+        youScoredPage.styleisplay = "block"
+
+    if (answerBtns4El){
+         correct.style.display = "block"
+         counter += 10
+    } else {
+        incorrect.style.display = "block"
+    }   
 }
+}
+
+function page6(){
+
 }
 
 // TODO: Create objects containing questions and answers
