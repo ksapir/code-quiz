@@ -249,7 +249,6 @@ function setTime(){
 
         theEndEl.style.display = "block"
 
-        return;
     }
 }, 1000);
 };
@@ -380,4 +379,8 @@ function page5(){
         youScoredPage.style.display = "block"
 
 }
+}
+
+function page6(){
+
 }
